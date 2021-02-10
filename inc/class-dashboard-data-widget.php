@@ -122,12 +122,8 @@ class Dashboard_Data_Widget {
             return false;
         }
 
-        if ( ! $current_options = self::get_widget_options() ) {
-            return false;
-        }
-
         $sanitized_options = self::sanitize_widget_options( $new_options );
-        $current_options   = self::cast_array_recursive( $current_options );
+        $current_options   = self::cast_array_recursive( self::get_widget_options() );
 
         return update_option(
             DBDW_OPTIONS_ID,
@@ -170,17 +166,8 @@ class Dashboard_Data_Widget {
 
         $sanitized_options = [];
 
-        $options = self::cast_array_recursive( $options );
-
-        function dbdw_sanitize_charts( $charts ) {
-            $sanitized_charts = array();
-            foreach ( $charts as $key => $value ) {
-                $key = absint( $key );
-                $sanitized_charts[ $key ] = (array) $value;
-                foreach ( $value as $k => $v ) {
-                    $sanitized_charts[ $key ][ sanitize_text_field( $k ) ] = $v;
-                }
-            }
+        if ( is_object( $options ) ) {
+            $options = self::cast_array_recursive( $options );
         }
 
         foreach ( $options as $k => $v ) {
@@ -190,7 +177,7 @@ class Dashboard_Data_Widget {
                     break;
                 case 'charts':
                 case 'chart_lines':
-                    $sanitized_options[ $k ] = dbdw_sanitize_charts( (array) $v );
+                    $sanitized_options[ $k ] = self::sanitize_charts( self::cast_array_recursive( $v ) );
                     break;
                 case 'timeframe':
                     $sanitized_options[ $k ] = sanitize_text_field( $v );
@@ -199,6 +186,17 @@ class Dashboard_Data_Widget {
         }
 
         return $sanitized_options;
+    }
+
+    public static function sanitize_charts( $charts ) {
+        $sanitized_charts = array();
+        foreach ( $charts as $key => $value ) {
+            $key = absint( $key );
+            $sanitized_charts[ $key ] = (array) $value;
+            foreach ( $sanitized_charts[ $key ] as $k => $v ) {
+                $sanitized_charts[ $key ][ sanitize_text_field( $k ) ] = $v;
+            }
+        }
     }
 
     // https://stackoverflow.com/a/16111687/830992
