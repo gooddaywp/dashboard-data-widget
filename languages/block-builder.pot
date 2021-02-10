@@ -1,0 +1,80 @@
+# Copyright (C) 2021 Marc Wiest
+# This file is distributed under the same license as the Dashboard Data Widegt plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: Dashboard Data Widegt 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/dashboard-data-widget\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2021-02-10T08:50:20+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.4.0\n"
+"X-Domain: dbdw\n"
+
+#. Plugin Name of the plugin
+msgid "Dashboard Data Widegt"
+msgstr ""
+
+#. Plugin URI of the plugin
+msgid "https://github.com/gooddaywp/dashboard-data-widget"
+msgstr ""
+
+#. Description of the plugin
+msgid "React based dashboard widget showing a data graph."
+msgstr ""
+
+#. Author of the plugin
+msgid "Marc Wiest"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://marcwiest.com"
+msgstr ""
+
+#: inc/class-dashboard-data-widget.php:36
+msgid "Dashboard Data Widget"
+msgstr ""
+
+#. translators: %s: url to configuration screen; please do not alter or remove <a> tags
+#: inc/class-dashboard-data-widget.php:54
+msgid "The widget is currently disabled. You can enable it via the <a href='%s'>widget configuration screen</a>."
+msgstr ""
+
+#: inc/class-dashboard-data-widget.php:81
+msgid "This is an example of a dashboard widget configuration screen. If you disable the widget, the widget will show a \"widget disabled\" message instead of the React JS graph component."
+msgstr ""
+
+#: inc/default-options.php:9
+msgid "Total Visitors"
+msgstr ""
+
+#: inc/default-options.php:10
+msgid "New Visitors"
+msgstr ""
+
+#: inc/default-options.php:11
+msgid "Returning Visitors"
+msgstr ""
+
+#: src/Widget/components/TimeframeSelect/TimeframeSelect.js:11
+msgid "7 Days"
+msgstr ""
+
+#: src/Widget/components/TimeframeSelect/TimeframeSelect.js:15
+msgid "15 Days"
+msgstr ""
+
+#: src/Widget/components/TimeframeSelect/TimeframeSelect.js:19
+msgid "1 Month"
+msgstr ""
+
+#: src/Widget/Widget.js:37
+msgid "Loading…"
+msgstr ""
+
+#: src/Widget/Widget.js:43
+msgid "Graph Widget"
+msgstr ""

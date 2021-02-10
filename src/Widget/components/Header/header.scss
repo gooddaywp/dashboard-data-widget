@@ -1,0 +1,14 @@
+
+.dbdw-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.dbdw-header-column {
+	width: 50%;
+
+	&:nth-last-of-type(1) {
+		width: 25%;
+	}
+}
