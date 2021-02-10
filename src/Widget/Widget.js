@@ -20,7 +20,6 @@ const Widget = () => {
 
 	const onTimeframeChange = async ( newTimeframe ) => {
 		const resp = await setWidgetOptions( { timeframe: newTimeframe } );
-		console.log(resp);
 		if ( resp.success ) {
 			setTimeframe( newTimeframe );
 		}
