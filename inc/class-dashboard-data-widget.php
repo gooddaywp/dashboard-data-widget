@@ -194,7 +194,7 @@ class Dashboard_Data_Widget {
             $key = absint( $key );
             $sanitized_charts[ $key ] = (array) $value;
             foreach ( $sanitized_charts[ $key ] as $k => $v ) {
-                $sanitized_charts[ $key ][ sanitize_text_field( $k ) ] = $v;
+                $sanitized_charts[ $key ][ sanitize_text_field( $k ) ] = sanitize_text_field( $v );
             }
         }
     }
