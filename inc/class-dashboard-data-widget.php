@@ -18,7 +18,7 @@ class Dashboard_Data_Widget {
     /**
      * The id of this widget.
      */
-    public const ID = 'dbdw_dashboard_data_widget';
+    const ID = 'dbdw_dashboard_data_widget';
 
     /**
      * Hook to wp_dashboard_setup to add the widget.
